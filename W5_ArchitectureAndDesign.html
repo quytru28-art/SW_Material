@@ -1,0 +1,619 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>Figure – Chapter 6</title>
+  <meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+  <meta name="author" content="Ian Sommerville"/>
+  <meta name="created" content="2010-01-18T20:35:25"/>
+  <meta name="changedby" content="Jeffrey Pierantozzi"/>
+  <meta name="changed" content="2020-10-02T01:20:50"/>
+  <meta name="AppVersion" content="16.0000"/>
+  <meta name="Company" content="St Andrews University"/>
+  <meta name="HiddenSlides" content="6"/>
+  <meta name="Notes" content="14"/>
+  <meta name="PresentationFormat" content="On-screen Show (4:3)"/>
+  <meta name="Slides" content="63"/>
+</head>
+<body>
+<h1><b>Architectural Design</b></h1>
+<h1 style="page-break-before:always; "><b>Topics covered</b></h1>
+<ul>
+<li>Architecture overview</li>
+<li>Architectural design decisions</li>
+<li>Architectural patterns</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Architectural design</b></h1>
+<ul>
+<li>Architectural design is concerned with understanding how a software system should be organized and designing the overall structure of that system.</li>
+<li>Architectural design is the critical link between design and requirements engineering, as it identifies the main structural components in a system and the relationships between them. </li>
+<li>The output of the architectural design process is an architectural model that describes how the system is organized as a set of communicating components. </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Agility and architecture</b></h1>
+<ul>
+<li>It is generally accepted that an early stage of agile processes is to design an overall systems architecture.</li>
+<li>Refactoring the system architecture is usually expensive because it affects so many components in the system</li>
+</ul>
+<h1 style="page-break-before:always; "><b>The architecture of a packing robot control system</b></h1>
+<h1 style="page-break-before:always; "><b>Architectural abstraction</b></h1>
+<ul>
+<li>Architecture in the small is concerned with the architecture of individual programs. At this level, we are concerned with the way that an individual program is decomposed into components.  </li>
+<li>Architecture in the large is concerned with the architecture of complex enterprise systems that include other systems, programs, and program components. These enterprise systems are distributed over different computers, which may be owned and managed by different companies.  </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Advantages of explicit architecture</b></h1>
+<ul>
+<li>Stakeholder communication</li>
+<ul>
+<li>Architecture may be used as a focus of discussion by system stakeholders.</li>
+</ul>
+<li>System analysis</li>
+<ul>
+<li>Means that analysis of whether the system can meet its non-functional requirements is possible.</li>
+</ul>
+<li>Large-scale reuse</li>
+<ul>
+<li>The architecture may be reusable across a range of systems</li>
+<li>Product-line architectures may be developed.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Architectural representations</b></h1>
+<ul>
+<li>Simple, informal block diagrams showing entities and relationships are the most frequently used method for documenting software architectures.</li>
+<li>But these have been criticised because they lack semantics, do not show the types of relationships between entities nor the visible properties of entities in the architecture.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Architectural design decisions</b></h1>
+<h1 style="page-break-before:always; "><b>Architectural design decisions</b></h1>
+<ul>
+<li>Architectural design is a creative process so the process differs depending on the type of system being developed.</li>
+<li>However, a number of common decisions span all design processes and these decisions affect the non-functional characteristics of the system.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Architectural design decisions</b></h1>
+<h1 style="page-break-before:always; "><b>Architecture and system characteristics</b></h1>
+<ul>
+<li>Performance</li>
+<ul>
+<li>Localise critical operations and minimise communications. Use large rather than fine-grain components.</li>
+</ul>
+<li>Security</li>
+<ul>
+<li>Use a layered architecture with critical assets in the inner layers.</li>
+</ul>
+<li>Safety</li>
+<ul>
+<li>Localise safety-critical features in a small number of sub-systems.</li>
+</ul>
+<li>Availability</li>
+<ul>
+<li>Include redundant components and mechanisms for fault tolerance.</li>
+</ul>
+<li>Maintainability</li>
+<ul>
+<li>Use fine-grain, replaceable components.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Architecture reuse</b></h1>
+<ul>
+<li>Systems in the same domain often have similar architectures that reflect domain concepts.</li>
+<li>Application product lines are built around a core architecture with variants that satisfy particular customer requirements.</li>
+<li>The architecture of a system may be designed around one of more architectural patterns or ‘styles’. </li>
+<ul>
+<li>These capture the essence of an architecture and can be instantiated in different ways.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Architectural patterns</b></h1>
+<h1 style="page-break-before:always; "><b>Architectural patterns</b></h1>
+<ul>
+<li>Patterns are a means of representing, sharing and reusing knowledge.</li>
+<li>An architectural pattern is a stylized description of good design practice, which has been tried and tested in different environments.</li>
+<li>Patterns should include information about when they are and when the are not useful.</li>
+<li>Patterns may be represented using tabular and graphical descriptions.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>The Model-View-Controller (MVC) pattern </b></h1>
+<table>
+  <tr>
+    <td>
+<p><b>Name</b></p>
+    </td>
+    <td>
+<p><b>MVC (Model-View-Controller)</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Description</b></p>
+    </td>
+    <td>
+<p>Separates presentation and interaction from the system data. The system is structured into three logical components that interact with each other. The Model component manages the system data and associated operations on that data. The View component defines and manages how the data is presented to the user. The Controller component manages user interaction (e.g., key presses, mouse clicks, etc.) and passes these interactions to the View and the Model. See Figure 6.3.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Example</b></p>
+    </td>
+    <td>
+<p>Figure 6.4 shows the architecture of a web-based application system organized using the MVC pattern.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>When used</b></p>
+    </td>
+    <td>
+<p>Used when there are multiple ways to view and interact with data. Also used when the future requirements for interaction and presentation of data are unknown. </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Advantages</b></p>
+    </td>
+    <td>
+<p>Allows the data to change independently of its representation and vice versa. Supports presentation of the same data in different ways with changes made in one representation shown in all of them. </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Disadvantages</b></p>
+    </td>
+    <td>
+<p>Can involve additional code and code complexity when the data model and interactions are simple.</p>
+    </td>
+  </tr>
+</table>
+<h1 style="page-break-before:always; "><b>The organization of the Model-View-Controller </b></h1>
+<h1 style="page-break-before:always; "><b>Web application architecture using the MVC pattern </b></h1>
+<h1 style="page-break-before:always; "><b>Layered architecture</b></h1>
+<ul>
+<li>Used to model the interfacing of sub-systems.</li>
+<li>Organises the system into a set of layers (or abstract machines) each of which provide a set of services.</li>
+<li>Supports the incremental development of sub-systems in different layers. When a layer interface changes, only the adjacent layer is affected.</li>
+<li>However, often artificial to structure systems in this way.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>The Layered architecture pattern </b></h1>
+<table>
+  <tr>
+    <td>
+<p><b>Name</b></p>
+    </td>
+    <td>
+<p><b>Layered architecture</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Description</b></p>
+    </td>
+    <td>
+<p>Organizes the system into layers with related functionality associated with each layer. A layer provides services to the layer above it so the lowest-level layers represent core services that are likely to be used throughout the system. See Figure 6.6.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Example</b></p>
+    </td>
+    <td>
+<p>A layered model of a system for sharing copyright documents held in different libraries, as shown in Figure 6.7.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>When used</b></p>
+    </td>
+    <td>
+<p>Used when building new facilities on top of existing systems; when the development is spread across several teams with each team responsibility for a layer of functionality; when there is a requirement for multi-level security.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Advantages</b></p>
+    </td>
+    <td>
+<p>Allows replacement of entire layers so long as the interface is maintained. Redundant facilities (e.g., authentication) can be provided in each layer to increase the dependability of the system.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Disadvantages</b></p>
+    </td>
+    <td>
+<p>In practice, providing a clean separation between layers is often difficult and a high-level layer may have to interact directly with lower-level layers rather than through the layer immediately below it. Performance can be a problem because of multiple levels of interpretation of a service request as it is processed at each layer.</p>
+    </td>
+  </tr>
+</table>
+<h1 style="page-break-before:always; "><b>A generic layered architecture </b></h1>
+<h1 style="page-break-before:always; "><b>The architecture of the iLearn system </b></h1>
+<h1 style="page-break-before:always; "><b>Client-server architecture</b></h1>
+<ul>
+<li>Distributed system model which shows how data and processing is distributed across a range of components.</li>
+<ul>
+<li>Can be implemented on a single computer.</li>
+</ul>
+<li>Set of stand-alone servers which provide specific services such as printing, data management, etc.</li>
+<li>Set of clients which call on these services.</li>
+<li>Network which allows clients to access servers.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>The Client–server pattern </b></h1>
+<table>
+  <tr>
+    <td>
+<p><b>Name</b></p>
+    </td>
+    <td>
+<p><b>Client-server</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Description</b></p>
+    </td>
+    <td>
+<p>In a client–server architecture, the functionality of the system is organized into services, with each service delivered from a separate server. Clients are users of these services and access servers to make use of them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Example</b></p>
+    </td>
+    <td>
+<p>Figure 6.11 is an example of a film and video/DVD library organized as a client–server system.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>When used</b></p>
+    </td>
+    <td>
+<p>Used when data in a shared database has to be accessed from a range of locations. Because servers can be replicated, may also be used when the load on a system is variable.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Advantages</b></p>
+    </td>
+    <td>
+<p>The principal advantage of this model is that servers can be distributed across a network. General functionality (e.g., a printing service) can be available to all clients and does not need to be implemented by all services. </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p><b>Disadvantages</b></p>
+    </td>
+    <td>
+<p>Each service is a single point of failure so susceptible to denial of service attacks or server failure. Performance may be unpredictable because it depends on the network as well as the system. May be management problems if servers are owned by different organizations.</p>
+    </td>
+  </tr>
+</table>
+<h1 style="page-break-before:always; "><b>A client–server architecture for a film library </b></h1>
+<h1 style="page-break-before:always; "><b>Event-driven Architecture</b></h1>
+<ul>
+<li>Distributed, asynchronous architecture pattern used to produce highly scalable applications</li>
+<li>Highly decoupled, single-purpose event processing components that asynchronously receive and process events</li>
+<li>Consists of two main topologies</li>
+<ul>
+<li>Mediator</li>
+<ul>
+<li>Used when you need to  orchestrate multiple steps within an event through a central mediator</li>
+<ul>
+<li>For example, a single event to place a stock trade might require you to first validate the trade, then check the compliance of that stock trade against various compliance rules, assign the trade to a broker, calculate the commission, and finally place the trade with that broker.</li>
+</ul>
+</ul>
+<li>Broker</li>
+<ul>
+<li>Used when you want to chain events together without the use of a central mediator</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Event-driven Architecture</b></h1>
+<ul>
+<li>Mediator topology</li>
+<ul>
+<li>Four main types of architecture components</li>
+<ul>
+<li>event queues</li>
+<li>event mediator</li>
+<li>event channels</li>
+<li>event processors</li>
+</ul>
+<li>The event flow starts with a client sending an event to an <i>event queue</i>, which is used to transport the event to the <i>event mediator</i>.</li>
+<li>The event mediator receives the initial event and orchestrates that event by sending additional asynchronous events to <i>event channels </i>to execute each step of the process.</li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li><i>Event processors</i>, which listen on the event channels, receive the event from the event mediator and execute specific business logic to process the event.</li>
+<li>Two types of events within this pattern</li>
+<ul>
+<li>Initial event</li>
+<li>Processing event - generated by the mediator and received by the event-processing components</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Event-driven Architecture</b></h1>
+<h1 style="page-break-before:always; "><b>Event-driven Architecture</b></h1>
+<ul>
+<li>Broker topology</li>
+<ul>
+<li>The broker topology differs from the mediator topology in that there is no central event mediator; rather, the message flow is distributed across the event  processor components in a chain-like fashion through a lightweight message broker (e.g., ActiveMQ, HornetQ, etc.)</li>
+<ul>
+<li>This topology is useful when you have a relatively simple event processing flow and you do not want (or need) central event orchestration.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>Two main types of architecture components</li>
+<ul>
+<li>Broker</li>
+<ul>
+<li>Centralized or federated and contains all of the event channels that are used within the event flow</li>
+<li>The event channels contained within the broker component can be message queues, message topics, or a combination of both</li>
+</ul>
+<li>Event processor</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Event-driven Architecture</b></h1>
+<h1 style="page-break-before:always; "><b>Microkernal Architecture</b></h1>
+<ul>
+<li>Microkernel architecture pattern (sometimes referred to as the plug-in architecture pattern) is a natural pattern for implementing product-based applications</li>
+<li>A product-based application is one that is packaged and made available for download in versions as a typical third-party product</li>
+<ul>
+<li>However, many companies also develop and release their internal business applications like software products, complete with versions, release notes, and pluggable features.</li>
+</ul>
+<li>The microkernel architecture pattern allows you to add additional application features as plug-ins to the core application, providing extensibility as well as feature separation and isolation</li>
+<li>Consists of two types of architecture components</li>
+<ul>
+<li>Core system </li>
+<li>Plug-in modules</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Microkernal Architecture</b></h1>
+<ul>
+<li>Application logic is divided between independent plug-in modules and the basic core system, providing extensibility, flexibility, and isolation of application features and custom processing logic.</li>
+<li>The core system of the microkernel architecture pattern traditionally contains only the minimal functionality required to make the system operational.</li>
+<ul>
+<li>Many operating systems implement the microkernel architecture pattern, hence the origin of this pattern’s name.</li>
+<li>From a business-application perspective, the core system is often defined as the general business logic sans custom code for special cases, special rules, or complex conditional processing</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Microservices Architecture</b></h1>
+<ul>
+<li>The microservices architecture pattern is quickly gaining ground in the industry as a viable alternative to monolithic applications and service-oriented architectures.</li>
+<ul>
+<li>Because this architecture pattern is still evolving, there’s a lot of confusion in the industry about what this pattern is all about and how it is implemented.</li>
+</ul>
+<li>Concepts of pattern</li>
+<ul>
+<li>Separately deployed units</li>
+<ul>
+<li>Each component of the microservices architecture is deployed as a separate unit, allowing for easier deployment through an effective and streamlined delivery pipeline, increased scalability, and a high degree of application and component decoupling within your application.</li>
+</ul>
+<li>Service component</li>
+<ul>
+<li>Rather than think about services within a microservices architecture, it is better to think about service components, which can vary in granularity from a single module to a large portion of the application. Service components contain one or more modules (e.g., Java classes) that represent either a single-purpose function (e.g., providing the weather for a specific city or town) or an independent portion of a large business application (e.g., stock trade placement or determining auto-insurance rates).</li>
+<li>Designing the right level of service component granularity is one of the biggest challenges within a microservices architecture.</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Microservices Architecture</b></h1>
+<ul>
+<li>Concepts (continued)</li>
+<ul>
+<li>Distributed architecture</li>
+<ul>
+<li>Components within the architecture are fully decoupled from one other and accessed through some sort of remote access protocol (e.g., JMS, AMQP, REST, SOAP, RMI, etc.).</li>
+<li>The distributed nature of this architecture pattern is how it achieves some of its superior scalability and deployment characteristics.</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<li>The microservices architecture style naturally evolved from two main sources</li>
+<ul>
+<li>Monolithic applications developed using the layered architecture pattern</li>
+<li>Distributed applications developed through the service-oriented architecture pattern</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Space-based Architecture</b></h1>
+<ul>
+<li>In any high-volume application with an extremely large concurrent user load, the database will usually be the final limiting factor in how many transactions you can process concurrently</li>
+<li>The space-based architecture pattern is specifically designed to address and solve scalability and concurrency issues.</li>
+<ul>
+<li>It is also a useful architecture pattern for applications that have variable and unpredictable concurrent user volumes</li>
+<li>Solving the extreme and variable scalability issue architecturally is often a better approach than trying to scale out a database or retrofit caching technologies into a non-scalable architecture</li>
+</ul>
+<li>The space-based pattern (also sometimes referred to as the cloud architecture pattern) minimizes the factors that limit application scaling.</li>
+</ul>
+<ul>
+<ul>
+<li>This pattern gets its name from the concept of tuple space, the idea of distributed shared memory.</li>
+<li>High scalability is achieved by removing the central database constraint and using replicated in-memory data grids instead.</li>
+<li>Application data is kept in-memory and replicated among all the active processing units.</li>
+<li>Processing units can be dynamically started up and shut down as user load increases and decreases, thereby addressing variable scalability.</li>
+<li>Because there is no central database, the database bottleneck is removed, </li>
+<p>	providing near-infinite scalability within the application.</p>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Space-based Architecture</b></h1>
+<ul>
+<li>Most applications that fit into this pattern are standard websites that receive a request from a browser and perform some sort of action</li>
+<ul>
+<li>A bidding auction site is a good example of this. The site continually receives bids from internet users through a browser request. The application would receive a bid for a particular item, record that bid with a timestamp, and update the latest bid information for the item, and send the information back to the browser.</li>
+</ul>
+<li>Two primary components</li>
+<ul>
+<li>Processing unit </li>
+<ul>
+<li>The processing-unit component contains the application components (or portions of the application components). This includes web-based components as well as backend business logic. </li>
+<ul>
+<li>application modules, along with an in-memory data grid and an optional asynchronous persistent store for failover</li>
+<li>replication engine that is used by the virtualized middleware to replicate data changes made by one processing unit to other active processing units.</li>
+</ul>
+</ul>
+<li>Virtualized middleware</li>
+<ul>
+<li>handles housekeeping and communications.</li>
+<li>Contains components that control various aspects of data synchronization and request handling. Included in the virtualized middleware are the messaging grid, data grid, processing grid, and deployment manager.</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Space-based Architecture</b></h1>
+<h1 style="page-break-before:always; "><b>Space-based Architecture</b></h1>
+<ul>
+<li>The magic of the space-based architecture pattern lies in the virtualized middleware components and the in-memory data grid contained within each processing unit.</li>
+<li>The virtualized middleware is essentially the controller for the architecture and manages requests, sessions, data replication, distributed request processing, and process-unit deployment. There are four main architecture components in the virtualized middleware</li>
+<ul>
+<li>Messaging grid</li>
+<li>Data grid</li>
+<li>Processing grid</li>
+<li>Deployment manager</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Design and Implementation</b></h1>
+<h1 style="page-break-before:always; "><b>Object-oriented design</b></h1>
+<h1 style="page-break-before:always; "><b>An object-oriented design process</b></h1>
+<ul>
+<li>Structured object-oriented design processes involve developing a number of different system models.</li>
+<li>They require a lot of effort for development and maintenance of these models and, for small systems, this may not be cost-effective.</li>
+<li>However, for large systems developed by different groups design models are an important communication mechanism.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Process stages</b></h1>
+<ul>
+<li>There are a variety of different object-oriented design processes that depend on the organization using the process.</li>
+<li>Common activities in these processes include:</li>
+<ul>
+<li>Define the context and modes of use of the system;</li>
+<li>Design the system architecture;</li>
+<li>Identify the principal system objects;</li>
+<li>Develop design models;</li>
+<li>Specify object interfaces.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Approaches to identification</b></h1>
+<ul>
+<li>Use a grammatical approach based on a natural language description of the system.</li>
+<li>Base the identification on tangible things in the application domain.</li>
+<li>Use a behavioural approach and identify objects based on what participates in what behaviour.</li>
+<li>Use a scenario-based analysis.  The objects, attributes and methods in each scenario are identified.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Weather station object classes</b></h1>
+<ul>
+<li>Object class identification in the weather station system may be based on the tangible hardware and data in the system:</li>
+<ul>
+<li>Ground thermometer, Anemometer, Barometer</li>
+<ul>
+<li>Application domain objects that are ‘hardware’ objects related to the instruments in the system.</li>
+</ul>
+<li>Weather station</li>
+<ul>
+<li>The basic interface of the weather station to its environment. It therefore reflects the interactions identified in the use-case model.</li>
+</ul>
+<li>Weather data</li>
+<ul>
+<li>Encapsulates the summarized data from the instruments.</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Weather station object classes </b></h1>
+<h1 style="page-break-before:always; "><b>Design models</b></h1>
+<ul>
+<li>Design models show the objects and object classes and relationships between these entities.</li>
+<li>Examples</li>
+<ul>
+<li>Sequence models that show the sequence of object interactions.</li>
+<li>State machine models that show how individual objects change their state in response to events.</li>
+<li>Other models include use-case models, aggregation models, generalisation models, etc.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Sequence models</b></h1>
+<ul>
+<li>Sequence models show the sequence of object interactions that take place</li>
+<ul>
+<li>Objects are arranged horizontally across the top;</li>
+<li>Time is represented vertically so models are read top to bottom;</li>
+<li>Interactions are represented by labelled arrows, Different styles of arrow represent different types of interaction;</li>
+<li>A thin rectangle in an object lifeline represents the time when the object is the controlling object in the system.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Sequence diagram describing data collection </b></h1>
+<h1 style="page-break-before:always; "><b>State diagrams</b></h1>
+<ul>
+<li>State diagrams are used to show how objects respond to different service requests and the state transitions triggered by these requests.</li>
+<li>State diagrams are useful high-level models of a system or an object’s run-time behavior. </li>
+<li>You don’t usually need a state diagram for all of the objects in the system. Many of the objects in a system are relatively simple and a state model adds unnecessary detail to the design.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Weather station state diagram </b></h1>
+<h1 style="page-break-before:always; "><b>Implementation Planning</b></h1>
+<h1 style="page-break-before:always; "><b>Implementation planning</b></h1>
+<ul>
+<li>Reuse Most modern software is constructed by reusing existing components or systems. When you are developing software, you should make as much use as possible of existing code.</li>
+<li>Configuration management During the development process, you have to keep track of the many different versions of each software component in a configuration management system.</li>
+<li>Host-target development Production software does not usually execute on the same computer as the software development environment. Rather, you develop it on one computer (the host system) and execute it on a separate computer (the target system). </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Reuse levels</b></h1>
+<ul>
+<li>The abstraction level </li>
+<ul>
+<li>At this level, you don’t reuse software directly but use knowledge of successful abstractions in the design of your software. </li>
+</ul>
+<li>The object level </li>
+<ul>
+<li>At this level, you directly reuse objects from a library rather than writing the code yourself. </li>
+</ul>
+<li>The component level </li>
+<ul>
+<li>Components are collections of objects and object classes that you reuse in application systems. </li>
+</ul>
+<li>The system level </li>
+<ul>
+<li>At this level, you reuse entire application systems. </li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Software reuse</b></h1>
+<h1 style="page-break-before:always; "><b>Configuration management</b></h1>
+<ul>
+<li>Configuration management is the name given to the general process of managing a changing software system. </li>
+<li>The aim of configuration management is to support the system integration process so that all developers can access the project code and documents in a controlled way, find out what changes have been made, and compile and link components to create a system. </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Configuration management activities</b></h1>
+<ul>
+<li>Version management, where support is provided to keep track of the different versions of software components. Version management systems include facilities to coordinate development by several programmers. </li>
+<li>System integration, where support is provided to help developers define what versions of components are used to create each version of a system. This description is then used to build a system automatically by compiling and linking the required components.</li>
+<li>Problem tracking, where support is provided to allow users to report bugs and other problems, and to allow all developers to see who is working on these problems and when they are fixed. </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Configuration management tool interaction</b></h1>
+<h1 style="page-break-before:always; "><b>Host-target development</b></h1>
+<ul>
+<li>Most software is developed on one computer (the host), but runs on a separate machine (the target). </li>
+<li>More generally, we can talk about a development platform and an execution platform. </li>
+<ul>
+<li>A platform is more than just hardware. </li>
+<li>It includes the installed operating system plus other supporting software such as a database management system or, for development platforms, an interactive development environment.</li>
+</ul>
+<li>Development platform usually has different installed software than execution platform; these platforms may have different architectures.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Host-target development</b></h1>
+<h1 style="page-break-before:always; "><b>Component/system deployment factors</b></h1>
+<ul>
+<li>If a component is designed for a specific hardware architecture, or relies on some other software system, it must obviously be deployed on a platform that provides the required hardware and software support.</li>
+<li>High availability systems may require components to be deployed on more than one platform. This means that, in the event of platform failure, an alternative implementation of the component is available. </li>
+<li>If there is a high level of communications traffic between components, it usually makes sense to deploy them on the same platform or on platforms that are physically close to one other. This reduces the delay between the time a message is sent by one component and received by another.</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Open source development</b></h1>
+<h1 style="page-break-before:always; "><b>Open source development</b></h1>
+<ul>
+<li>Open source development is an approach to software development in which the source code of a software system is published and volunteers are invited to participate in the development process</li>
+<li>Its roots are in the Free Software Foundation (www.fsf.org), which advocates that source code should not be proprietary but rather should always be available for users to examine and modify as they wish. </li>
+<li>Open source software extended this idea by using the Internet to recruit a much larger population of volunteer developers. Many of them are also users of the code. </li>
+</ul>
+<h1 style="page-break-before:always; "><b>Open source licensing</b></h1>
+<ul>
+<li>A fundamental principle of open-source development is that source code should be freely available, this does not mean that anyone can do as they wish with that code.</li>
+<ul>
+<li>Legally, the developer of the code (either a company or an individual) still owns the code. They can place restrictions on how it is used by including legally binding conditions in an open source software license. </li>
+<li>Some open source developers believe that if an open source component is used to develop a new system, then that system should also be open source. </li>
+<li>Others are willing to allow their code to be used without this restriction. The developed systems may be proprietary and sold as closed source systems.</li>
+</ul>
+</ul>
+</body>
+</html>
