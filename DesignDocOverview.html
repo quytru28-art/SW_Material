@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>Figure – Chapter 6</title>
+  <meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+  <meta name="author" content="Ian Sommerville"/>
+  <meta name="created" content="2010-01-18T20:35:25"/>
+  <meta name="changedby" content="Pierantozzi, Jeffrey C."/>
+  <meta name="changed" content="2019-03-01T00:40:03"/>
+  <meta name="AppVersion" content="16.0000"/>
+  <meta name="Company" content="St Andrews University"/>
+  <meta name="PresentationFormat" content="On-screen Show (4:3)"/>
+  <meta name="Slides" content="11"/>
+</head>
+<body>
+<h1><b>Design Document Review</b></h1>
+<h1 style="page-break-before:always; "><b>Design Document Outline</b></h1>
+<ul>
+<li>Table of Contents</li>
+<li>Purpose	</li>
+<li>Scope</li>
+<ul>
+<li>Exclusions, Assumptions, and Limitations</li>
+</ul>
+<li>Solution Design Overview</li>
+<li>Technical Architecture	</li>
+<ul>
+<li>Hardware Inventory, Specifications and Locations</li>
+<ul>
+<li>Servers</li>
+<li>Input / Output Devices</li>
+<li>Other Devices</li>
+<li>Infrastructure/Application Diagram</li>
+<li>Middleware Hosting	</li>
+</ul>
+<li>Interfaces with Other Hardware and External Integration Points</li>
+<li>Physical Layout</li>
+<li>Additional Information</li>
+</ul>
+<li>Configuration Specification</li>
+<li>Solution Design Specification</li>
+<ul>
+<li>Software Description</li>
+<li>Coding Standards</li>
+<li>Solution Data, Information View, and Data Requirements</li>
+<li>Module Description</li>
+</ul>
+<li>Roles and Responsibilities</li>
+<li>Terms and Definitions</li>
+<li>Supporting References</li>
+<li>Revision History</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Purpose Section</b></h1>
+<ul>
+<li>Provide context for the document in relation to the entire project</li>
+<ul>
+<li>Include a brief description of the project and the business purpose for the solution</li>
+<li>Reference the user story/requirements documentation</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Scope Section</b></h1>
+<ul>
+<li>Provide a high-level description of the functionality included in the system</li>
+<ul>
+<li>Include key features</li>
+<ul>
+<li>Primary functionality</li>
+<ul>
+<li>“The warehouse inventory system provides an end-to-end solution for managing inventory, from receiving incoming inventory, tracking on-site inventory, and preparing and tracking shipments”</li>
+</ul>
+<li>User interfaces</li>
+<ul>
+<li>“Mobile device interface for capturing photographs”</li>
+<li>“Browser-based interface for managing inventory”</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Solution Design Overview Section</b></h1>
+<ul>
+<li>Provide a narrative description of the business problem(s) that the system is designed to solve</li>
+<ul>
+<li>“The ERA system is an electronic records archive system being procured by the client. The ERA system provides lifecycle management support for both non-electronic and electronic records created primarily by the Federal Government.”</li>
+</ul>
+<li>Provide a high-level overview of the various technical components of the system</li>
+<ul>
+<li>“The solution consists of an Evolvable Archive Framework (EAF) software architecture. This services-based software architecture supports a design implementation that achieves an optimal balance of vendor-neutral, Commercial-Off-The-Shelf (COTS) components to perform commodity data processing and custom code to meet requirements”</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Technical Architecture Section</b></h1>
+<ul>
+<li>Describe the technical architecture</li>
+<ul>
+<li>Hardware Inventory, Specifications and Locations</li>
+<ul>
+<li>Servers</li>
+<li>Input / Output Devices</li>
+<li>Other Devices</li>
+<li>Infrastructure/Application Diagram</li>
+<li>Middleware Hosting	</li>
+</ul>
+<li>Interfaces with Other Hardware and External Integration Points</li>
+<li>Physical Layout</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Technical Architecture Section</b></h1>
+<h1 style="page-break-before:always; "><b>Configuration Specification Section</b></h1>
+<ul>
+<li>Provide the configuration details for the components of the solution</li>
+<ul>
+<li>Hardware and Software</li>
+<ul>
+<li>“The major hardware and software components of implementing the system are as follows:</li>
+<ul>
+<li><u>Server Specifications </u>(Production box)</li>
+<ul>
+<li>Sun Fire 280R</li>
+<li>2x900 MHz Sparc CPU 4GB RAM</li>
+<li>100MB Network”</li>
+</ul>
+</ul>
+</ul>
+<li>Dependencies</li>
+<ul>
+<li>“The system requires a connection to the Google Maps web service to provide updated geo-location information.”</li>
+<li>“The mobile application components require access to the mobile device’s contacts information.”</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; "><b>Solution Design Specification Section</b></h1>
+<ul>
+<li>Provide the details of all the interfaces, modules, databases, and other components of the system</li>
+</ul>
+<h1 style="page-break-before:always; "><b>Roles and Responsibilities Section</b></h1>
+<ul>
+<li>Identify the roles involved with developing and deploying the solution</li>
+<ul>
+<li>System Administrator</li>
+<li>Developers</li>
+<li>Testers</li>
+</ul>
+</ul>
+<table>
+  <tr>
+    <td>
+<p><b>Role</b></p>
+    </td>
+    <td>
+<p><b>Responsibilities</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>System Administrator</p>
+    </td>
+    <td>
+<ul>
+<li>Validate that all system components are installed and configured correctly</li>
+<li>Ensure that all infrastructure (e.g., servers, workstations, devices) are configured to support solution</li>
+</ul>
+    </td>
+  </tr>
+</table>
+<h1 style="page-break-before:always; "></h1>
+<p>User</p>
+<p>Add, Remove, Change Inventory items and amounts</p>
+<p>Scan barcode</p>
+<p>Create/Delete users</p>
+<p>Manager</p>
+<p>Configure warehouse</p>
+</body>
+</html>
